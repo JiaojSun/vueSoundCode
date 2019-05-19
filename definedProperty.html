@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>definedproperty</title>
+</head>
+
+<body>
+    <div id="app">
+        <p id="name"></p>
+    </div>
+    <script>
+        var obj = {}
+        Object.defineProperty(obj, 'name', {
+            get:function() {
+                // querySelector() 方法仅仅返回匹配指定选择器的第一个元素。如果你需要返回所有的元素，请使用 querySelectorAll() 方法替代。
+                return document.querySelector('#name').innerHTML;
+            },
+            set:function(val) {
+                document.querySelector('#name').innerHTML = val
+            }
+        })
+        obj.name = 'jerry'
+    </script>
+</body>
+
+</html>
